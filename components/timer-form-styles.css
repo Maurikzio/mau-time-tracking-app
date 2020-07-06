@@ -1,0 +1,53 @@
+.timer-form-card{
+  border: 1px solid grey;
+  padding: 10px 10px;
+  /* color: rgb(95, 95, 95); */
+  /* background: green; */
+  border-radius: 5px;
+}
+.field {
+  font-size: 13px;
+  padding: 5px 0;
+  /* background: yellow; */
+}
+.field label {
+  font-weight: 600;
+  display: inline-block;
+  /* background: orange; */
+  margin-bottom: 5px;
+}
+
+.field input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 30px;
+  padding: 8px;
+  color:rgb(50, 50, 50);
+  border: 1px solid rgb(196, 193, 193);
+  border-radius: 5px;
+}
+.field input:focus {
+  outline: none;
+}
+
+.controls{
+  margin-top: 5px;
+  display: flex;
+}
+
+.timer-btn{
+  background: transparent;
+}
+
+.btn-blue{
+  flex-grow: 1;
+  border: 1px solid rgb(13, 150, 230);
+  padding: 6px;
+  color: rgb(13, 150, 230);
+}
+.btn-red{
+  flex-grow: 1;
+  border: 1px solid rgb(255, 79, 79);
+  color: rgb(255, 79, 79);
+  margin-left: -1px;
+}
