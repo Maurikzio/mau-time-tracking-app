@@ -51,3 +51,6 @@ class Timer extends React.Component {
 }
 
 export default Timer;
+
+//STATEFUL
+//remains stateless, it does not need to be modified
