@@ -1,7 +1,7 @@
 import React from 'react';
 
 import EditableTimer from './EditableTimer';
-import './editable-timers-list-styles.css';
+import './styles/editable-timers-list-styles.css';
 
 class EditableTimerList extends React.Component {
   render(){

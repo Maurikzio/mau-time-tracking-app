@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './timer-form-styles.css';
+import './styles/timer-form-styles.css';
 
 class TimerForm extends React.Component {
   //state for form, it uses the this.props.title when is UPDATE cliclek and '' when ADD '+' new timer is clicked

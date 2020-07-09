@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import EditableTimerList from './EditableTimerList';
 import ToggleableTimerForm from './ToggleableTimerForm';
 
-import './timer-dashboard-styles.css';
+import './styles/timer-dashboard-styles.css';
 
 
 function newTimer(data={}){

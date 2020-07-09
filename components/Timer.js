@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './timer-styles.css';
+import './styles/timer-styles.css';
 
 const transformTime = (millisec) => {
   let seconds = (millisec / 1000).toFixed(0);

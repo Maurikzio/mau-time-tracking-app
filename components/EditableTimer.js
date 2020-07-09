@@ -3,7 +3,7 @@ import React from 'react';
 import Timer from './Timer';
 import TimerForm from './TimerForm';
 
-import './editable-timer-styles.css';
+import './styles/editable-timer-styles.css';
 
 class EditableTimer extends React.Component {
   state = {
