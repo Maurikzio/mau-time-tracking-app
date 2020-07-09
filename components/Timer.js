@@ -22,6 +22,9 @@ const transformTime = (millisec) => {
 }
 
 class Timer extends React.Component {
+  handlerTrashClick = () => {
+    this.props.onTrashClick(this.props.id);
+  }
   render(){
     const elapsedString = transformTime(this.props.elapsed);
     return(
@@ -39,7 +42,7 @@ class Timer extends React.Component {
           </div>
           <div className='timer-extra-content'>
             <span onClick={this.props.onEditClick}>edit</span>
-            <span>trash</span>
+            <span onClick={this.handlerTrashClick}>trash</span>
           </div>
         </div>
         
