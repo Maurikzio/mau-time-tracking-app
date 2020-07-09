@@ -32,7 +32,8 @@ class TimersDashboard extends React.Component {
         project: 'Kitchen Chores',
         id: uuidv4(),
         elapsed: 1273998,
-        runningSince: Date.now()
+        // runningSince: Date.now()
+        runningSince: null
       }
     ]
   }
