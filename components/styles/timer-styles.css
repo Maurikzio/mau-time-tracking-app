@@ -67,4 +67,20 @@
   box-sizing: border-box;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  text-align: center;
+  transition: .3s all ease;
+}
+.timer-control:hover{
+  cursor: pointer;
+  color: white;
+  background: rgb(13, 150, 230);
+}
+
+.stop-btn{
+  color: red;
+  border: 1px solid red;
+}
+.stop-btn:hover{
+  color: white;
+  background: red;
 }
