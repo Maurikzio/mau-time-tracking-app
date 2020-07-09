@@ -41,8 +41,8 @@ class Timer extends React.Component {
             {elapsedString}
           </div>
           <div className='timer-extra-content'>
-            <span onClick={this.props.onEditClick}>edit</span>
-            <span onClick={this.handlerTrashClick}>trash</span>
+            <span onClick={this.props.onEditClick} className='timer-btn edit-btn'>edit</span>
+            <span onClick={this.handlerTrashClick} className='timer-btn trash-btn'>trash</span>
           </div>
         </div>
         
