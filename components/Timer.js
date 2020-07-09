@@ -38,7 +38,7 @@ class Timer extends React.Component {
             {elapsedString}
           </div>
           <div className='timer-extra-content'>
-            <span>edit</span>
+            <span onClick={this.props.onEditClick}>edit</span>
             <span>trash</span>
           </div>
         </div>
