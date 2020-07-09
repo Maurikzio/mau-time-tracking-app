@@ -54,3 +54,6 @@ export default Timer;
 
 //STATEFUL
 //remains stateless, it does not need to be modified
+
+
+//Timer has a fair amount of behavior. It needs to handle DELETE and EDIT clicks, as well as the START and STOP timer logic.

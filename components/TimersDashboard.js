@@ -6,6 +6,17 @@ import ToggleableTimerForm from './ToggleableTimerForm';
 
 import './timer-dashboard-styles.css';
 
+
+function newTimer(data={}){
+  const timer = {
+    title: data.title || 'Dummy Timer',
+    project: data.project || 'Smart Timer',
+    id: uuidv4(),
+    elapsed: 0,
+  };
+  return timer;
+}
+
 class TimersDashboard extends React.Component {
   state = {
     timers: [
@@ -25,12 +36,27 @@ class TimersDashboard extends React.Component {
       }
     ]
   }
+
+  handleCreateFormSubmit = (timer) => {
+    this.createTimer(timer);
+  }
+  //why 2 functions handleCreateFormSubmit and createTimer, to follow the Single Responsibility Principle
+  createTimer = (timer) => {
+    const t = newTimer(timer);
+    this.setState({
+      timers: this.state.timers.concat(t)
+    })
+  }
+
+
   render(){
   
     return (
       <div className='dashboard-wrapper'>
           <EditableTimerList timers={this.state.timers}/>
-          <ToggleableTimerForm isOpen={true}/> 
+          <ToggleableTimerForm 
+            onFormSubmit={this.handleCreateFormSubmit}
+          /> 
       </div>
     )
   }
@@ -43,3 +69,9 @@ export default TimersDashboard;
 
 //STATEFUL
 //TimersDashboardholdd the timer data directly inside the component
+
+//the first event we're concerned with is the submission of a form. When this happens, either a new timer is beign created or an existing one is being updated
+//we will use two separate functions to handle two distinct events:
+//1-handleCreateFormSubmit(): will handle create and will be the function paseed to ToogleabletimerForm
+//2-handleEditFormSubmit() will handle updates and will be the function passed to EditableTimerList
+//both functions travel down their respective compoent hierarchies until they react TimerForm ad the prop onFormSubmit()

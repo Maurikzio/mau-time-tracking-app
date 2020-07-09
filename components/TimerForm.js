@@ -19,8 +19,17 @@ class TimerForm extends React.Component {
     this.setState({ project: value })
   }
 
+  handleSubmit = () => {
+    this.props.onFormSubmit({
+      id: this.props.id,
+      title: this.state.title,
+      project: this.state.project
+    })
+  }
+
   render(){
-    const submitText = this.props.title ? 'Update' : 'Create';
+    //we will use the 'id' as opposed to title, to determine whether or not an object has been created.
+    const submitText = this.props.id ? 'Update' : 'Create';
     return(
       <div className='timer-form-card'>
 
@@ -43,8 +52,18 @@ class TimerForm extends React.Component {
         </div>
 
         <div className='controls'>
-          <button className='timer-btn btn-blue'>{submitText}</button>
-          <button className='timer-btn btn-red' onClick={() => this.props.onAdd()}>Cancel</button>
+          <button 
+            className='timer-btn btn-blue'
+            onClick={this.handleSubmit}
+          >
+            {submitText}
+          </button>
+          <button 
+            className='timer-btn btn-red' 
+            onClick={this.props.onFormClose}
+            >
+              Cancel
+            </button>
         </div>
       </div>
     )
@@ -52,3 +71,17 @@ class TimerForm extends React.Component {
 }
 
 export default TimerForm;
+
+//TimerForm needs to propagate CREATE and UPDATE events
+//CREATE while under ToggleableTimerForm and UPDATE while under EditableTimer.
+//both evetns will eventually reach TimersDashboard.
+
+//TimerForm needs to event handlers
+//1-when the form is submitted *creating or updating a timer)
+//2-when the 'Cancel' button is clicked (closing the form)
+
+//Timer for will receive two functions as props to handle each event, the parent of TimerForm is responsible for providing these functions
+
+//-props.onFormSubmit(): called whrn thef roms is cubmitted
+//-props.onFormClose(): called when the 'Cancel' button is clicked.
+
